@@ -1,0 +1,553 @@
+[
+  {
+    "referenceNumber": 1,
+    "file": "reference-01.png",
+    "pixels": [
+      1541,
+      848
+    ],
+    "sha256": "333b0b6e016ac8cb17e6a577b8e161ed119825b3348371dce9e655b0f99b1c69",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 2,
+    "file": "reference-02.png",
+    "pixels": [
+      1427,
+      799
+    ],
+    "sha256": "165df68e3ab9787c5a3e3952cc4fd5181588d07976dd9d1212037f54d77f3891",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 3,
+    "file": "reference-03.png",
+    "pixels": [
+      1360,
+      761
+    ],
+    "sha256": "df99a7f3187fd10c2e4d314bdd2478e3d043d83a124fd2cabed27c8b112e1b60",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 4,
+    "file": "reference-04.png",
+    "pixels": [
+      1339,
+      746
+    ],
+    "sha256": "140e19559fc085775241cc075982645ef3455ab2339af9baa4ca0f9e6b2fecb4",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 5,
+    "file": "reference-05.png",
+    "pixels": [
+      1353,
+      757
+    ],
+    "sha256": "f974a2cac5115e55376497ece86856646ba59dd5bdb3e4968ac57b75ce393716",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 6,
+    "referenceBatch": "batch-02",
+    "batchFigure": 1,
+    "file": "reference-06.png",
+    "pixels": [
+      1369,
+      759
+    ],
+    "sha256": "88f140d32dfb72615f26bd2c13e367a254d15b5e1c372dbeda6c98b808fd6a39",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 7,
+    "referenceBatch": "batch-02",
+    "batchFigure": 2,
+    "file": "reference-07.png",
+    "pixels": [
+      1374,
+      778
+    ],
+    "sha256": "18690c41cf3310d7866196e28c22da463eacdceeb1c1d1cea5177056176cf8ee",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 8,
+    "referenceBatch": "batch-02",
+    "batchFigure": 3,
+    "file": "reference-08.png",
+    "pixels": [
+      1362,
+      533
+    ],
+    "sha256": "3ff0da68be3a0716007646be53a0e8749272d257902501eca209f62630029fb9",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 9,
+    "referenceBatch": "batch-02",
+    "batchFigure": 4,
+    "file": "reference-09.png",
+    "pixels": [
+      1432,
+      705
+    ],
+    "sha256": "2341f7225eb169e61b72836cc7bc927d3003d1ac71d8ed523dedfe35cbfb049c",
+    "status": "用户提供的原图，未改写像素"
+  },
+  {
+    "referenceNumber": 10,
+    "referenceBatch": "batch-03",
+    "batchFigure": 1,
+    "file": "reference-10.png",
+    "pixels": [
+      1414,
+      700
+    ],
+    "sha256": "491f0396a4b44bea31af027d02ca0dd2763755cbe1438dd9049ffa8958f77063",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 11,
+    "referenceBatch": "batch-03",
+    "batchFigure": 2,
+    "file": "reference-11.png",
+    "pixels": [
+      1439,
+      699
+    ],
+    "sha256": "b848e81dda28ad069137abba84be458ecc99da68f8261cd585e5d4c70f1a79b2",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 12,
+    "referenceBatch": "batch-03",
+    "batchFigure": 3,
+    "file": "reference-12.png",
+    "pixels": [
+      1442,
+      520
+    ],
+    "sha256": "79c43395432e91cd8ca7d045073d6e753754c080b7ba6b8b4f1608083cc30ee4",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 13,
+    "referenceBatch": "batch-03",
+    "batchFigure": 4,
+    "file": "reference-13.png",
+    "pixels": [
+      1405,
+      635
+    ],
+    "sha256": "c803fbac87d8c0691da26cb6d0488dbd4a50050fae3491624b1e78a5159a19d4",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 14,
+    "referenceBatch": "batch-03",
+    "batchFigure": 5,
+    "file": "reference-14.png",
+    "pixels": [
+      1409,
+      701
+    ],
+    "sha256": "9b57c2d7c4df534826eb4a606e10533f5391052665ef6c09ea4167cdedd22938",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 15,
+    "referenceBatch": "batch-03",
+    "batchFigure": 6,
+    "file": "reference-15.png",
+    "pixels": [
+      1436,
+      686
+    ],
+    "sha256": "6ada09c7329db82e4810e2127902f3a96f26b318a9e65797861c13631bfa860f",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 16,
+    "referenceBatch": "batch-03",
+    "batchFigure": 7,
+    "file": "reference-16.png",
+    "pixels": [
+      1430,
+      693
+    ],
+    "sha256": "3e7078123d24017f608f1461c98be78f079e4376a9fb039e462d9e7b3d03f63e",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 17,
+    "referenceBatch": "batch-04",
+    "batchFigure": 1,
+    "file": "reference-17.png",
+    "pixels": [
+      1379,
+      770
+    ],
+    "sha256": "2cb55d2734cef95c307ad23194cfa6416041e38456ac893318f7086aa14ab7ff",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-17.png"
+  },
+  {
+    "referenceNumber": 18,
+    "referenceBatch": "batch-04",
+    "batchFigure": 2,
+    "file": "reference-18.png",
+    "pixels": [
+      1378,
+      769
+    ],
+    "sha256": "ecf9f1c98da9ccb1101003833e77d2c20d9eda5ffb2ab0e7aaed59b7939feb51",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-18.png"
+  },
+  {
+    "referenceNumber": 19,
+    "referenceBatch": "batch-04",
+    "batchFigure": 3,
+    "file": "reference-19.png",
+    "pixels": [
+      1374,
+      780
+    ],
+    "sha256": "c380b8b2dcaf29c1d1cc2f033a0452329590a7c461ffaad7d796460b18309133",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-19.png"
+  },
+  {
+    "referenceNumber": 20,
+    "referenceBatch": "batch-04",
+    "batchFigure": 4,
+    "file": "reference-20.png",
+    "pixels": [
+      1442,
+      815
+    ],
+    "sha256": "f1a65f7a7ec3cd6da3f92875104769600d9b827cc25df571a1e3fb73e2a4ac73",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-20.png"
+  },
+  {
+    "referenceNumber": 21,
+    "referenceBatch": "batch-04",
+    "batchFigure": 5,
+    "file": "reference-21.png",
+    "pixels": [
+      1462,
+      823
+    ],
+    "sha256": "58307305741ca3e87dfd4f62ef393b566b299cb75f789bb041504f499c3a9fc3",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-21.png"
+  },
+  {
+    "referenceNumber": 22,
+    "referenceBatch": "batch-04",
+    "batchFigure": 6,
+    "file": "reference-22.png",
+    "pixels": [
+      1452,
+      813
+    ],
+    "sha256": "54081b8d10e18e323db57af8588c54612872175a21a0816dbd8eece4766562a3",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-22.png"
+  },
+  {
+    "referenceNumber": 23,
+    "referenceBatch": "batch-04",
+    "batchFigure": 7,
+    "file": "reference-23.png",
+    "pixels": [
+      1458,
+      818
+    ],
+    "sha256": "d7e1a17c793413c040b389ec1825e85bce38c60cdd1062c743d4fbee707bb6a1",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-23.png"
+  },
+  {
+    "referenceNumber": 24,
+    "referenceBatch": "batch-05",
+    "batchFigure": 1,
+    "file": "reference-24.png",
+    "pixels": [
+      1486,
+      830
+    ],
+    "sha256": "f1eecc7672e84e02befe1b97bcf37803c674db35167f33386027659de872412b",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-24.png"
+  },
+  {
+    "referenceNumber": 25,
+    "referenceBatch": "batch-05",
+    "batchFigure": 2,
+    "file": "reference-25.png",
+    "pixels": [
+      1468,
+      821
+    ],
+    "sha256": "32682891e1a327ce3d0b1ddc4313cfac511360c0e5eb8038d7364cfadc8d57a8",
+    "status": "用户原图，像素未改写",
+    "sourcePath": "materials/component-references/reference-25.png"
+  },
+  {
+    "referenceNumber": 26,
+    "referenceBatch": "batch-05",
+    "batchFigure": 3,
+    "file": "reference-26.png",
+    "pixels": [
+      1464,
+      824
+    ],
+    "sha256": "0f8e72140a5c126011ce46162488a5647fc5abd3d7fa0284349683a38c5ecf04",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 27,
+    "referenceBatch": "batch-05",
+    "batchFigure": 4,
+    "file": "reference-27.png",
+    "pixels": [
+      1475,
+      823
+    ],
+    "sha256": "a4cdc6023f5264860d2c0a263b231b5c857cb6124bbd5504690aeac3ca5e779b",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 28,
+    "referenceBatch": "batch-05",
+    "batchFigure": 5,
+    "file": "reference-28.png",
+    "pixels": [
+      1458,
+      820
+    ],
+    "sha256": "e498619e243d9b5f01cfd53e5e5788fb4bb8bc093e36814359a91ced482e9b74",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 29,
+    "referenceBatch": "batch-06",
+    "batchFigure": 1,
+    "file": "reference-29.png",
+    "pixels": [
+      1337,
+      738
+    ],
+    "sha256": "0f2a999f8a5b868b48fa81fae3a2fbbdb42219ba903c85e63f4a04864e4e60c3",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 30,
+    "referenceBatch": "batch-06",
+    "batchFigure": 2,
+    "file": "reference-30.png",
+    "pixels": [
+      1377,
+      761
+    ],
+    "sha256": "c4416b1238a49a28fd57c54eb0a16a1522a26d2a6545e7918d6eb627ef68d5e0",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 31,
+    "referenceBatch": "batch-06",
+    "batchFigure": 3,
+    "file": "reference-31.png",
+    "pixels": [
+      1337,
+      748
+    ],
+    "sha256": "3d4e87da1794ed732fac005243d5cbc018e1feeb8db4d1685a99a47e1b08442c",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 32,
+    "referenceBatch": "batch-06",
+    "batchFigure": 4,
+    "file": "reference-32.png",
+    "pixels": [
+      1456,
+      813
+    ],
+    "sha256": "387758a23a9d8d805ed55ec213fb76e9663206f16491edd78f54001bdf0078ab",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 33,
+    "referenceBatch": "batch-06",
+    "batchFigure": 5,
+    "file": "reference-33.png",
+    "pixels": [
+      1461,
+      828
+    ],
+    "sha256": "3575c25916c57d26046d6452318f56f08833176b6cc8f6d74b31faccaca6abe1",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 34,
+    "referenceBatch": "batch-07",
+    "batchFigure": 1,
+    "file": "reference-34.png",
+    "pixels": [
+      1380,
+      781
+    ],
+    "sha256": "9a7967f411ef4f23bf57ff0c374cb2c09687ad9abc008eaf6f0226b07fa1ba9d",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 35,
+    "referenceBatch": "batch-07",
+    "batchFigure": 2,
+    "file": "reference-35.png",
+    "pixels": [
+      1394,
+      785
+    ],
+    "sha256": "da4a0358aa5604c41ce69bb0c155dca0160af3a165f0c229772ab4268bf7f947",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 36,
+    "referenceBatch": "batch-07",
+    "batchFigure": 3,
+    "file": "reference-36.png",
+    "pixels": [
+      1402,
+      777
+    ],
+    "sha256": "e3ae2e1031d56e485306ec183a5ebca91b48f05ca63dff259ed0f73a3ca06546",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 37,
+    "referenceBatch": "batch-07",
+    "batchFigure": 4,
+    "file": "reference-37.png",
+    "pixels": [
+      1491,
+      816
+    ],
+    "sha256": "4044c175b2cf9bd893da003fa380196ca8d24f93804b04776b83cd29f45d7233",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 38,
+    "referenceBatch": "batch-07",
+    "batchFigure": 5,
+    "file": "reference-38.png",
+    "pixels": [
+      1463,
+      825
+    ],
+    "sha256": "cf66662042c0a9d728c1b523a0a9f07f9ca6cb44856210d504c8bb32c5d86efb",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 39,
+    "referenceBatch": "batch-07",
+    "batchFigure": 6,
+    "file": "reference-39.png",
+    "pixels": [
+      1439,
+      800
+    ],
+    "sha256": "a35bf3165ca3a9fa018c4661fc4f3d11b4325fc84b29a034806ecb879eb29f3c",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 40,
+    "referenceBatch": "batch-07",
+    "batchFigure": 7,
+    "file": "reference-40.png",
+    "pixels": [
+      1460,
+      807
+    ],
+    "sha256": "b9fd132e612cd7b430eb39ed4553d613698b69b289d4127b637f20385e2630b9",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 41,
+    "referenceBatch": "batch-07",
+    "batchFigure": 8,
+    "file": "reference-41.png",
+    "pixels": [
+      1446,
+      813
+    ],
+    "sha256": "70628cf3de639645a36965b56dddade07221c4133cfdf4d68e504deb5135c6d2",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 42,
+    "referenceBatch": "batch-07",
+    "batchFigure": 9,
+    "file": "reference-42.png",
+    "pixels": [
+      1487,
+      826
+    ],
+    "sha256": "f1020a2164efb431e69ee8b40d24c4b84793fa5e8dd0dbf862d353976bf5ad14",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 43,
+    "referenceBatch": "batch-07",
+    "batchFigure": 10,
+    "file": "reference-43.png",
+    "pixels": [
+      1497,
+      824
+    ],
+    "sha256": "d9d9efd7dc060a13548268cd030af1190f31718f2ecb7eab6aacef75051ee305",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 44,
+    "referenceBatch": "batch-07",
+    "batchFigure": 11,
+    "file": "reference-44.png",
+    "pixels": [
+      1475,
+      821
+    ],
+    "sha256": "7eb0c4ee1d310374a056a7138b30258d1e8eda26caebebd77dbdf973e556c5f4",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 45,
+    "referenceBatch": "batch-07",
+    "batchFigure": 12,
+    "file": "reference-45.png",
+    "pixels": [
+      1497,
+      831
+    ],
+    "sha256": "a2658f2fd28743ac84c08a7921a86284372e2419a8470888513ac204c2e28904",
+    "status": "用户原图，像素未改写"
+  },
+  {
+    "referenceNumber": 46,
+    "referenceBatch": "batch-08",
+    "batchFigure": 1,
+    "file": "reference-46.png",
+    "pixels": [
+      1464,
+      821
+    ],
+    "sha256": "28294ac3c09c20a85e48ad90eabf366067de037ce6692e79ba28b94fbd4bc94d",
+    "status": "用户原图，像素未改写"
+  }
+]

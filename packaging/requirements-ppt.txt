@@ -1,0 +1,6 @@
+# 本次核对的PPT工具直接依赖；系统依赖Windows、PowerPoint及微软雅黑另行准备
+lxml==6.1.1
+Pillow==12.2.0
+python-pptx==1.0.2
+XlsxWriter==3.2.9
+pywin32==311; sys_platform == "win32"

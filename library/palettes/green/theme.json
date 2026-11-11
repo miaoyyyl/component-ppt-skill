@@ -1,0 +1,89 @@
+{
+  "id": "green-white-human-selected",
+  "version": "0.2.0",
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "ratio": "16:9",
+    "unit": "px@96dpi"
+  },
+  "palette": {
+    "primary": "105A4B",
+    "white": "FFFFFF",
+    "text": "000000",
+    "inactive": "D9D9D9",
+    "line": "D9D9D9",
+    "surface": "F2F6F5",
+    "emphasisRed": "C00000",
+    "emphasisYellow": "FFFF00"
+  },
+  "typography": {
+    "family": "微软雅黑",
+    "titlePt": 32,
+    "tocTitlePt": 28,
+    "tocNumberPt": 32,
+    "bodyPolicy": "保留各原生文字槽位的字号和段落层级；统一可编辑文字的字体；内容页页标题统一为32pt；标题、引领句和红黄重点按功能加粗",
+    "outlinePolicy": "目录左侧转曲装饰字形保留原生路径；其不属于可替换正文字体",
+    "embeddedImagePolicy": "图片内的文字属于原图像素，不能通过修改PPT字体统一"
+  },
+  "colorPolicy": {
+    "base": "白色画布、所选主色页标题、双层隔断和底条。沿用原组件的色阶关系。",
+    "red": "保留示例的红色重点，替换时仅对具有同等功能的关键短语使用",
+    "yellow": "保留黄色标签，用于主色底板上的短标签",
+    "images": "不改写照片、政策截图、科学图表和机制图内部的颜色"
+  },
+  "toc": {
+    "panelY": 55.0,
+    "panelHeight": 610.0,
+    "preferredRowHeight": 72.52,
+    "minimumRowHeight": 52.0,
+    "minimumGap": 8.0,
+    "boundary": "白色主面板的上、下边缘",
+    "formula": "gap=(panelHeight-count*rowHeight)/(count+1); y[i]=panelY+gap+i*(rowHeight+gap)",
+    "overflow": "保持字号；缩小所有条目的统一行高至可读下限后仍不够时，报容量不足，由人工决定分栏或分页"
+  },
+  "contentPageFrame": {
+    "id": "white-title-divider-footer-v1",
+    "appliesTo": "content-pages",
+    "referencePath": "library/references/page-frame-reference.png",
+    "sourceFile": "1深蓝色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+    "sourceSlide": 6,
+    "titleBox": [
+      36,
+      10,
+      1208,
+      64
+    ],
+    "titleShapeId": 61000,
+    "dividerShapeId": 61001,
+    "footerShapeId": 61002,
+    "background": "FFFFFF",
+    "pageNumbers": false,
+    "contentBottom": 704,
+    "policy": "标题32pt主色加粗。白色画布、双层隔断和底条。保持原母版的字号、正文层级和图框。"
+  },
+  "displayCopyPolicy": {
+    "revision": "2026-11-02",
+    "inlineCitationMarks": false,
+    "supplementalSmallPrint": false,
+    "pageTitleMode": "declarative",
+    "terminalSentencePunctuation": false,
+    "preserveInternalPunctuationUnitsAndScientificSymbols": true,
+    "sourceDestination": [
+      "speaker-notes",
+      "source-register",
+      "references"
+    ],
+    "auditTool": "scripts/presentation_copy.py"
+  },
+  "sourceFigurePolicy": {
+    "reviewEachWordImage": true,
+    "recordUseOrExclusionReason": true,
+    "photorealisticPreferenceDoesNotExcludeAllMechanismFigures": true,
+    "preserveOriginalBytes": true,
+    "recoverableCropAllowed": true,
+    "generateOnlyAfterGapReview": true
+  },
+  "paletteId": "green",
+  "paletteName": "绿白"
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>组件库导航 · 交互演示</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:15px/1.55 "Microsoft YaHei",sans-serif;color:#183047;background:#f5f7fa}header{height:69px;display:flex;align-items:center;gap:44px;padding:0 4vw;background:#fff;border-bottom:1px solid #d4deeb;position:sticky;top:0;z-index:2}strong{font-size:19px}nav{display:flex;gap:12px;height:100%}button,input,select{font:inherit}button,select{cursor:pointer}button{background:white;border:1px solid #cfdae8;border-radius:5px;padding:6px 12px;color:#21405e}nav button{border:0;border-radius:0;border-bottom:3px solid transparent;padding:0 12px}nav button[aria-pressed=true]{color:#0046a5;border-color:#0046a5;font-weight:bold}header small{margin-left:auto;color:#63758b}.shell{max-width:1580px;margin:auto;display:grid;grid-template-columns:245px minmax(0,1fr);height:calc(100dvh - 69px)}aside,main{overflow:auto;min-height:0;padding:24px}aside{border-right:1px solid #d4deeb}aside h2{font-size:16px;margin:0}p,small{color:#526980}#names{display:grid;gap:4px}#names button{text-align:left;width:100%;border-color:transparent;background:transparent}#names button.on{background:#e4edfa;color:#0046a5;border-color:#afc8e9}#names label{display:flex;align-items:center;padding:6px;gap:8px;cursor:pointer}main{background:white;padding:22px clamp(16px,3vw,50px)}h1{margin:4px 0;font-size:25px}h3{font-size:17px}.meta{color:#536e8e;font-size:12px;letter-spacing:.07em}.tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}.tools button.on,.primary{color:#fff;background:#0046a5;border-color:#0046a5}.slide{display:block;width:100%;max-height:60vh;object-fit:contain;object-position:left;background:#f6f8fb;border:1px solid #dae2eb}.row{display:flex;gap:8px;align-items:center;padding:12px 0;border-bottom:1px solid #dae2eb;flex-wrap:wrap}.row b{flex:1}.brief{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.brief input,select{padding:7px;border:1px solid #b8cadf;border-radius:4px}.brief input{display:block;width:100%}dt{font-weight:bold;color:#0046a5}dd{margin:1px 0 10px}button:disabled{opacity:.4}#task,#browse{max-width:1250px;margin:auto}[hidden]{display:none!important}@media(max-width:700px){header{gap:6px;padding:0 8px}header strong{font-size:14px}header small{display:none}.shell{display:flex;flex-direction:column}aside{padding:8px;max-height:20vh;border-bottom:1px solid #ccd9e7}aside p{display:none}#names{display:flex;width:100%;overflow-x:auto}#names>*{flex:none;white-space:nowrap}main{flex:1;padding:12px}.brief{grid-template-columns:1fr}}
+#peek{position:fixed;z-index:4;width:min(500px,calc(100vw - 24px));box-sizing:border-box;padding:12px;background:white;border:1px solid #b8cadf;border-radius:8px;box-shadow:0 8px 32px #18304728;pointer-events:none}
+#peek strong{display:block;font-size:15px;margin-bottom:8px}#peek img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#f5f7fa}#names label:hover,#names label:focus-within{background:#e4edfa;border-radius:5px}
+</style>
+<header><strong>PPT 组件库</strong><nav aria-label="主导航"><button id="libraryNav">组件展示</button><button id="taskNav">任务选型 <span id="count">0</span></button></nav><small>交互演示 · 独立草稿</small></header>
+<div class="shell"><aside><h2 id="sideTitle"></h2><p id="hint"></p><div id="names"></div></aside>
+<main><section id="browse"><div class="meta" id="code"></div><h1 id="title"></h1><p id="purpose"></p><div class="tools" id="modes"></div><img class="slide" id="picture" alt="当前组件预览"><h3>版式拆解</h3><dl id="regions"></dl></section>
+<section id="task" hidden><div class="meta">本次制作任务</div><h1>选择组件与优先级</h1><p>从组件清单勾选，按优先顺序排列。未选组件自动作为备用。</p><div id="chosen"></div><h3>制作要求</h3><div class="brief" id="fields"></div><div class="tools"><button class="primary" id="export">导出演示任务 JSON</button></div><small>本页的选择仅在当前演示标签中保留。</small></section></main></div>
+<div id="peek" hidden><strong></strong><img alt="组件版式预览"></div>
+<script src="../library/data.js"></script><script src="../library/task-state.js"></script>
+<script>
+const lib=window.COMPONENT_LIBRARY, catalog=lib.catalog, components=catalog.components, state=PPTTaskState;
+const $=id=>document.getElementById(id);
+let current=components[0], selecting=false, mode="原案例", demo=state.create(catalog);
+function make(tag,text){const n=document.createElement(tag);n.textContent=text;return n}
+function button(text,fn){const b=make("button",text);b.onclick=fn;return b}
+const peek=$("peek");let peekTimer;
+function hidePeek(){clearTimeout(peekTimer);peek.hidden=true}
+function schedulePeek(label,component){
+  hidePeek();
+  peekTimer=setTimeout(()=>{
+    const chosen=demo.preferredComponents.find(item=>item.componentId===component.id);
+    const variant=component.variants?.find(v=>v.id===chosen?.variantId);
+    const key=component.id+(variant?"__"+variant.id:"");
+    peek.firstElementChild.textContent=component.name+(variant?" · "+variant.name:"");
+    peek.lastElementChild.src="../library/previews/"+key+".png";
+    peek.hidden=false;
+    const rect=label.getBoundingClientRect(),w=peek.offsetWidth,h=peek.offsetHeight;
+    const beside=rect.right+16+w<=innerWidth;
+    peek.style.left=(beside?rect.right+16:Math.max(8,Math.min(rect.left,innerWidth-w-8)))+"px";
+    peek.style.top=Math.max(8,Math.min(beside?rect.top:rect.bottom+8,innerHeight-h-8))+"px";
+  },180)
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")hidePeek()});
+document.addEventListener("scroll",()=>{if(!peek.hidden)hidePeek()},true);window.addEventListener("resize",hidePeek);
+function show(selection){
+  hidePeek();
+  selecting=selection;$("browse").hidden=selection;$("task").hidden=!selection;
+  $("libraryNav").setAttribute("aria-pressed",!selection);$("taskNav").setAttribute("aria-pressed",selection);
+  $("sideTitle").textContent=selection?"选择本次组件":"全部组件 · "+components.length;
+  $("hint").textContent=selection?"勾选加入本次任务":"点击名称查看版式";
+  $("names").replaceChildren();for(const c of components){
+    if(selection){const l=make("label",""),box=document.createElement("input");box.type="checkbox";box.checked=demo.preferredComponents.some(item=>item.componentId===c.id);
+      l.onpointerenter=e=>{if(e.pointerType!=="touch")schedulePeek(l,c)};l.onpointerleave=hidePeek;
+      box.onfocus=()=>{if(box.matches(":focus-visible"))schedulePeek(l,c)};box.onblur=hidePeek;
+      box.onchange=()=>{demo=state.setPreferred(demo,c.id,box.checked,catalog);choices()};l.append(box,c.name);$("names").append(l)}
+    else{const b=button(c.name,()=>{current=c;detail();document.querySelector("main").scrollTop=0});b.dataset.id=c.id;$("names").append(b)}
+  }if(selection)choices();else detail();document.querySelector("main").scrollTop=0;
+}
+function detail(){
+  for(const b of $("names").children)b.classList.toggle("on",b.dataset.id===current.id);
+  $("code").textContent=current.id;$("title").textContent=current.name;$("purpose").textContent=current.task;
+  if(!current.referenceFile && mode==="参考图")mode="原案例";
+  const modes=current.referenceFile?["原案例","X 占位","参考图"]:["原案例","X 占位"];
+  $("modes").replaceChildren();for(const label of modes){const b=button(label,()=>{mode=label;detail()});b.classList.toggle("on",label===mode);$("modes").append(b)}
+  $("picture").src="../library/"+(mode==="参考图"?"references/"+current.referenceFile:(mode==="X 占位"?"placeholders/":"")+"previews/"+current.id+".png");
+  $("regions").replaceChildren();for(const r of current.regions)$("regions").append(make("dt",r.name),make("dd",r.function))
+}
+function choices(){
+  const items=demo.preferredComponents;$("count").textContent=items.length;$("chosen").replaceChildren();
+  if(!items.length)$("chosen").append(make("p","尚未选择组件。"));
+  items.forEach((item,i)=>{const c=components.find(c=>c.id===item.componentId),row=make("div","");row.className="row";row.append(make("b",(i+1)+". "+c.name));
+    const sel=make("select","");sel.setAttribute("aria-label",c.name+"的变体");
+    for(const v of [{id:"auto",name:"模型按内容选择"},{id:"base",name:"基础版式"},...(c.variants||[])])sel.add(new Option(v.name,v.id));
+    sel.value=item.variantId;sel.onchange=()=>{demo=state.setVariant(demo,c.id,sel.value,catalog)};row.append(sel);
+    for(const [name,d] of [["上移",-1],["下移",1]]){const b=button(name,()=>{demo=state.move(demo,c.id,d,catalog);choices()});b.disabled=i+d<0||i+d>=items.length;row.append(b)}
+    row.append(button("查看版式",()=>{current=c;show(false)}));$("chosen").append(row)})
+}
+for(const [key,label] of [["title","任务名称"],["audience","听众"],["durationMinutes","时长（分钟）"],["pageRange","页数范围"]]){
+  const l=make("label",label),input=document.createElement("input");if(key==="durationMinutes"){input.type="number";input.min=1;input.max=1440}
+  input.oninput=()=>{demo.brief[key]=key==="durationMinutes"?(input.value?Number(input.value):null):input.value};l.append(input);$("fields").append(l)
+}
+$("export").onclick=()=>{if(![...$("fields").querySelectorAll("input")].every(n=>n.reportValidity()))return;
+  const data=state.forAgent(demo,lib),url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:"application/json"}));const a=document.createElement("a");a.href=url;a.download="演示任务.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+$("libraryNav").onclick=()=>show(false);$("taskNav").onclick=()=>show(true);show(false)
+</script>
+</html>

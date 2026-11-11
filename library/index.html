@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PPT 组件库 · 人工选型</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>PPT 组件库</h1>
+    <div class="workspace-links" role="navigation" aria-label="主导航"><a href="#library">组件展示</a><a href="#selection">任务选型 <span id="nav-count">0</span></a></div>
+    <label class="palette-control" for="palette-select">
+      <span>配色</span><span class="palette-sample" aria-hidden="true"></span>
+      <select id="palette-select"></select>
+    </label>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2 id="list-title">全部组件</h2><p class="muted" id="list-hint" hidden>勾选加入任务，悬停查看版式</p>
+      <nav id="component-nav" aria-label="组件列表"></nav>
+      <section class="theme-summary"><h2>统一样式</h2><div id="palette" class="palette"></div>
+        <p>可编辑文字：微软雅黑<br>内容页标题：32 pt，加粗<br>正文与局部字号按槽位固定</p>
+        <p class="muted">照片和科学图表保留原图颜色与内部字体。</p>
+      </section>
+      <a class="doc-link" href="../docs/组件拆解与复用规范.md">查看完整拆解与替换规则</a>
+    </aside>
+    <main>
+      <section hidden id="production-task" class="production-task" aria-labelledby="task-heading">
+        <div class="task-heading"><div><p class="eyebrow">本次制作任务</p><h2 id="task-heading">选好组件，导出给 Agent</h2></div><button id="task-new" class="quiet-button" type="button">新建任务</button></div>
+        <ol class="task-steps" aria-label="使用步骤"><li><span>1</span>选择组件与变体</li><li><span>2</span>填写制作要求</li><li><span>3</span>导出 JSON 交给 Agent</li></ol>
+        <div class="task-brief-grid">
+          <label class="task-title-field">任务名称<input id="task-title" maxlength="200" placeholder="例如：微塑料研究进展汇报"></label>
+          <label>听众<input id="task-audience" maxlength="4000" placeholder="可留空，由模型结合原稿判断"></label>
+          <label>汇报时长（分钟）<input id="task-durationMinutes" type="number" min="1" max="1440" placeholder="可留空"></label>
+          <label>页数范围<input id="task-pageRange" maxlength="4000" placeholder="可留空，由模型建议"></label>
+        </div>
+        <details class="task-extra"><summary>原稿说明与补充要求（可选）</summary><div class="task-brief-grid">
+          <label>原稿说明<textarea id="task-sourceNotes" maxlength="4000" rows="2" placeholder="说明主稿、附件和需要关注的章节"></textarea></label>
+          <label>必须保留<textarea id="task-mustKeep" maxlength="4000" rows="2" placeholder="关键数据、结论或指定图表"></textarea></label>
+          <label class="task-wide">资料与文献范围<textarea id="task-researchScope" maxlength="4000" rows="2" placeholder="可留空，由模型先分析内容缺口，再查找相关来源"></textarea></label>
+        </div></details>
+        <div class="task-selection-heading"><h3>本次优先组件 <span id="task-preferred-count">0</span></h3><p class="muted">越靠前越优先；上移、下移可调整顺序</p></div>
+        <p id="task-empty" class="task-empty">从左侧勾选组件，悬停可预览版式。本次形式可交给模型选择，也可指定为某个变体。</p>
+        <ol id="task-preferred-list" class="priority-list" aria-label="本次优先组件及顺序"></ol>
+        <details class="task-fallback"><summary>未选组件作为备用：<span id="task-fallback-count">33</span> 类</summary><p id="task-fallback-names" class="muted"></p></details>
+        <div class="task-handoff">
+          <h3>把本次选型交给 Agent</h3>
+          <button id="task-export" class="primary-button" type="button">导出任务 JSON</button>
+        </div>
+        <p id="task-message" class="task-message" role="status" aria-live="polite"></p>
+      </section>
+      <div id="catalog-detail"><div class="component-heading"><div><p id="component-id" class="eyebrow"></p><h2 id="component-name"></h2></div>
+        <div class="component-actions"><a id="template-link" class="primary-link" download>下载原生 PPT 母版</a></div>
+      </div>
+      <div id="variant-toolbar" class="variant-toolbar" hidden><label for="variant-select">当前组件形式</label><select id="variant-select"></select><span>在人工授权的范围内选择</span></div>
+      <div class="preview-toolbar">
+        <div class="segmented" role="group" aria-label="预览版本">
+          <button id="show-normalized" type="button" aria-pressed="true">X 容量占位</button>
+          <button id="show-case" type="button" aria-pressed="false">原案例版式</button>
+          <button id="show-reference" type="button" aria-pressed="false">用户原始参考图</button>
+        </div>
+        <label><input id="show-regions" type="checkbox"> 显示功能分区</label>
+      </div>
+      <div id="preview" class="preview"><img id="slide-image" alt=""><div id="region-overlay" class="region-overlay"></div></div>
+      <p id="preview-status" class="muted" role="status" hidden></p>
+      <details id="toc-demo" class="toc-demo" hidden>
+        <summary>检查不同条目数量的等距排布</summary>
+        <div class="demo-controls"><label>条目数 <select id="toc-count"></select></label><label>当前章 <select id="toc-active"></select></label><span id="toc-metrics"></span></div>
+        <div id="toc-diagram" class="toc-diagram" aria-label="目录排布演示"></div>
+        <p class="muted">排布边界取白色主面板上下边缘。此处为规则演示，原生 PPT 可通过重建脚本导出。</p>
+      </details>
+      <section id="adaptation-section" class="adaptation" hidden><h3>模型可选择的范围</h3><ul id="adaptation-rules"></ul></section>
+      <section class="argument"><h3>这页如何组织论证</h3><p id="argument-text"></p></section>
+      <section><h3>按区域拆解</h3><div id="regions" class="region-list"></div></section>
+      <div class="two-columns"><section><h3>适用情形</h3><ul id="fits"></ul></section><section><h3>保持的结构</h3><ul id="fixed"></ul></section></div>
+      <section><h3>内容替换槽位</h3><div class="table-wrap"><table><thead><tr><th>槽位</th><th>内容功能</th><th>替换要求</th></tr></thead><tbody id="slots"></tbody></table></div></section>
+      </div>
+    </main>
+  </div>
+  <div id="layout-peek" hidden><strong></strong><img alt="组件版式预览"></div>
+  <template id="component-group-icon">
+    <svg class="component-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path class="component-group-icon-back" d="M13.75 3.5h8.5V16"/>
+      <path d="M11.5 6.25h8.75v11.5H11.5"/>
+      <circle cx="15.9" cy="10.8" r="2"/>
+      <path d="M15.9 8.8v2h2M13.9 14.6h4"/>
+      <path d="M2.75 5.2 11.5 3.65v16.7L2.75 18.8Z"/>
+      <path d="M5.7 15.2V8.8h1.95a1.7 1.7 0 0 1 0 3.4H5.7"/>
+    </svg>
+  </template>
+  <script src="data.js"></script><script src="palettes/data.js"></script><script src="task-state.js"></script><script src="task-panel.js"></script><script src="viewer.js"></script><script src="workspace-nav.js"></script>
+</body>
+</html>

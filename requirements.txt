@@ -1,0 +1,5 @@
+lxml
+Pillow
+python-pptx
+XlsxWriter
+pywin32; sys_platform == "win32"
