@@ -39,16 +39,19 @@
 15. 发展时间线与政策治理：时间节点、文件依据、实施层级和并行任务分开表达。
 16. 左右共同作用于中心：两侧相向汇入中央，下方可用图组或总结文字。
 
-<img width="1919" height="890" alt="屏幕截图 2026-11-12 094422" src="https://github.com/user-attachments/assets/ba813e79-5a7e-4338-a9d4-4c9b14add1d0" />
-<img width="1919" height="902" alt="屏幕截图 2026-11-12 094355" src="https://github.com/user-attachments/assets/8099d8c8-6815-404a-8d3e-e41009e874fb" />
-<img width="1917" height="909" alt="屏幕截图 2026-11-12 094345" src="https://github.com/user-attachments/assets/c88bfb75-9ff4-4fbe-b6e8-e53eb3338a11" />
-<img width="1918" height="903" alt="屏幕截图 2026-11-12 094334" src="https://github.com/user-attachments/assets/ea60cb92-c836-4969-8cc1-49d33609458c" />
-<img width="1919" height="903" alt="屏幕截图 2026-11-12 094313" src="https://github.com/user-attachments/assets/1db7489e-0af4-4ecf-a111-a0c4ae6c3f84" />
+
+
+<img width="1918" height="903" alt="屏幕截图 2026-11-12 094334" src="https://github.com/user-attachments/assets/f097a616-4a15-4a41-9456-42ef114994b0" />
+<img width="1917" height="909" alt="屏幕截图 2026-11-12 094345" src="https://github.com/user-attachments/assets/234edef3-61b8-43a3-8d3c-9e1f675cf8f9" />
+<img width="1919" height="902" alt="屏幕截图 2026-11-12 094355" src="https://github.com/user-attachments/assets/de913d9f-c9ff-45ec-9a47-37c56a3a28c2" />
+
 
 
 ## 从选型导出到 Agent 制作
 
 以全部入库组件为候选，在每次制作前选择优先组件、变体及模型可调整范围，再由Agent根据核心方向和实际资料分析、补充必要来源并分配逐页内容。
+<img width="1919" height="890" alt="屏幕截图 2026-11-12 094422" src="https://github.com/user-attachments/assets/aeeda29e-9c31-422a-9e7c-5e8d005530ec" />
+
 
 - [制作工作流与人工选型](docs/制作工作流与人工选型.md)：操作步骤、匹配规则、来源追溯、制作模块和当前能力边界。
 - [制作任务填写模板](templates/制作任务填写模板.md)：填写本次原稿、听众、时长、优先组件和补充检索要求。
